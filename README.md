@@ -2,6 +2,7 @@
 This project builds classification models that predict the occurrence of anaemia in patients given some CBC values, allowing early detection.
 
 ---
+![anemia img](img/anemia_img.png)
 
 ## Background
 Anaemia is a common blood disorder that affects millions of people worldwide. It occurs when the body does not have enough healthy red blood cells or haemoglobin to carry oxygen effectively. Early detection of anaemia is important because untreated cases can lead to fatigue, organ damage, complications in pregnancy, and reduced quality of life.  
@@ -40,11 +41,13 @@ The following 5 models were evaluated:
   - This imbalance can make it more challenging for the model to learn and accurately predict rare conditions.
   - To address this issue, class weighting and detailed per-class performance evaluation are applied to ensure that the model performs effectively across both common and less frequent anaemia types.
 
+![anemia types](img/output1.png)
 
 - The correlation matrix indicates that most blood-related features exhibit low to moderate correlations with one another.
   - This suggests they capture distinct and complementary information rather than redundant signals.
-  - As a result, the models are able to learn from multiple informative features, with minimal risk of instability arising from highly correlated inputs.
+  - As a result, the models are able to learn from multiple informative features, with minimal risk of instability arising from highly correlated inputs.  
 
+![corr matrix](img/output.png)
 
 - The ANOVA test was used to determine whether there are statistically significant differences (p < 0.05) in the means of each numerical blood parameter across the different anemia types.
   - The features below showed mean values which differ significantly between at least some of the anemia groups. This means these features are likely to be useful for distinguishing between anemia types, as their distributions are not the same across all groups.
@@ -73,9 +76,13 @@ PCT: p = 8.2595e-04
 #### Modelling
 - A total of five (5) models were assessed (Logistic Regression, Decision Tree Classifier, Random Forest Classifier, Support Vector Classifier, and Gradient Boosting Classifier).
 - Both Logistic Regression and Support Vector Machine models achieved good performance, but their effectiveness improved significantly after hyperparameter tuning.
-- Tree-based models (Decision Tree, Random Forest, and Gradient Boosting) performed competitively, with Random Forest and Gradient Boosting often matching or exceeding the accuracy of Logistic Regression and SVM, especially in handling class imbalance and capturing complex feature interactions. Their ROC curves showed strong separability for most anaemia types, with Random Forest and Gradient Boosting providing robust AUC values across all classes.
+- Tree-based models (Decision Tree, Random Forest, and Gradient Boosting) performed competitively, with Random Forest and Gradient Boosting often matching or exceeding the accuracy of Logistic Regression and SVM, especially in handling class imbalance and capturing complex feature interactions. Their ROC curves showed strong separability for most anaemia types, with Random Forest and Gradient Boosting providing robust AUC values across all classes.  
 
+![ROC curve1](img/output2.png)  
 
+![ROC curve2](img/output3.png)  
+
+![ROC curve3](img/output4.png)
 
 
 
@@ -89,6 +96,7 @@ Our findings suggest that machine learning, particularly ensemble tree-based mod
 ## Repository Structure
 ```
 ├── data/
+├── img/
 ├── notebooks/
 │   ├── anemia_prediction.ipynb
 ├── README.md
